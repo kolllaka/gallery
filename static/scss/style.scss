@@ -1,0 +1,379 @@
+$orange: #EE4D47;
+$bgcolor: #222222;
+$text: #402B2B;
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	&.locked {
+		overflow: hidden;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	min-height: 100vh;
+	width: 100vw;
+	background-color: $bgcolor;
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.gallery {
+	// .gallery__title
+	&__title {
+		text-align: center;
+		color: $orange;
+		font-size: 48px;
+		text-shadow: 2px 2px rgba($color: $orange, $alpha: .2);
+	}
+
+	// .gallery__nav
+	&__nav {
+		position: absolute;
+		top: 20px;
+	}
+
+	// .gallery__body
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 10px;
+		justify-content: space-between;
+	}
+
+	// .gallery__item
+	&__item {
+		padding-bottom: 20px;
+		cursor: pointer;
+		background-color: rgba($color: $bgcolor, $alpha: .7);
+		border-radius: 5px;
+		border: 1px solid $orange;
+		box-shadow: 2px 2px rgba($color: $orange, $alpha: .2);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 10px;
+	
+	}
+
+	// .gallery__img
+	&__img {
+		width: 100%;
+		position: relative;
+		aspect-ratio: 1/1;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&:hover {
+			opacity: .7;
+			~.gallery__name>span {
+				span {
+					color: rgba($color: $orange, $alpha: .5);
+				}
+			}
+		}
+	}
+
+	// .gallery__add
+	&__add {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		aspect-ratio: 1/1;
+		&:hover {
+			span {
+				border: 2px solid rgba($color: $orange, $alpha: .5);
+				&::after,
+				&:before {
+					background-color: rgba($color: $orange, $alpha: .5);
+				}
+			}
+			~.gallery__name {
+				span {
+					color: rgba($color: $orange, $alpha: .5);
+				}
+			}
+		}
+		span {
+			display: block;
+			width: 25%;
+			height: 25%;
+			border-radius: 50%;
+			border: 2px solid  $orange;
+			position: relative;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				height: 2px;
+				width: 50%;
+				transform: translate(-50%, -50%);
+				display: block;
+				background-color: $orange;
+			}
+			&::after {
+				transform: translate(-50%, -50%) rotate(90deg);
+			}
+		}
+	}
+
+	// .gallery__name
+	&__name {
+		padding: 10px 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		span {
+			color: $orange;
+			font-size: 25px;
+		}
+	}
+
+	// .gallery__input
+	&__input {
+		width: 100%;
+	}
+
+	// .gallery__btns
+	&__btns {
+		padding: 0 10px;
+	}
+
+	// .gallery__delete
+	&__delete {
+	}
+}
+
+.navgallery {
+	// .navgallery__btns
+	&__btns {
+		display: flex;
+		gap: 20px;
+	}
+
+	// .navgallery__btn
+	&__btn {
+	}
+}
+
+
+.poppup {
+	cursor: pointer;
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	background-color: rgba($color: $bgcolor, $alpha: .7);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	&.show {
+		display: flex;
+	}
+	&::before {
+		content: "x close";
+		position: fixed;
+		top: 20%;
+		left: 77%;
+		color: $orange;
+		font-size: 20px;
+		padding: 5px 10px;
+		border: 1px solid $orange;
+		box-shadow: 2px 2px rgba($color: $orange, $alpha: .2);
+		border-radius: 5px;
+	}
+	// .poppup__body
+	&__body {
+		cursor: default;
+		z-index: 20;
+		min-width: 50%;
+		min-height: 50%;
+		background-color: gray;
+		border-radius: 10px;
+		border: 2px solid $orange;
+		box-shadow: 2px 2px rgba($color: $orange, $alpha: .2);
+		padding: 20px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .poppup__row
+	&__row {
+		width: 50%;
+		margin: 0 auto 20px;
+	}
+
+	// .poppup__title
+	&__title {
+		text-align: center;
+		margin-bottom: 30px;
+		span {
+			font-size: 30px;
+			color: $orange;
+			text-shadow: 2px 2px rgba($color: $orange, $alpha: .2);
+		}
+	}
+
+	// .poppup__label
+	&__label {
+		margin-bottom: 20px;
+		width: 100%;
+		text-align: start;
+		span {
+			display: block;
+			font-size: 20px;
+			color: $text;
+			margin-bottom: 5px;
+		}
+	}
+
+	// .poppup__addfiles
+	&__addfiles {
+	}
+
+	// .poppup__error
+	&__error {
+		color: red;
+		font-size: 20px;
+	}
+
+	// poppup__img
+	&__img {
+		height: 90vh;
+		width: 100%;
+		position: relative;
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .poppup__input
+	&__input {
+		width: 100%;
+	}
+
+	// .poppup__btns
+	&__btns {
+		min-width: 30%;
+		margin-top: auto;
+	}
+
+	// .poppup__additem
+	&__additem {
+		width: 100%;
+	}
+}
+
+.input {
+	box-sizing: border-box;
+	padding: 10px 20px;
+	color: $text;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 1px solid $orange;
+	box-shadow: 1px 1px 1px $orange;
+	&:focus {
+		outline:none;
+		border: 1px solid rgba($color: $orange, $alpha: .6);
+		box-shadow: 1px 1px 1px rgba($color: $orange, $alpha: .6);
+	}
+}
+
+.btn {
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+	border: 1px solid $orange;
+	box-shadow: 1px 1px 1px $orange,
+		2px 2px 1px rgba($color: $orange, $alpha: .8),
+		3px 3px 1px rgba($color: $orange, $alpha: .6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFFFFF;
+	span {
+		font-size: 20px;
+		color: $text;
+	}
+	&:hover {
+		border: 1px solid rgba($color: $orange, $alpha: .6);
+		box-shadow: 1px 1px 1px rgba($color: $orange, $alpha: .6),
+			2px 2px 1px rgba($color: $orange, $alpha: .4),
+			3px 3px 1px rgba($color: $orange, $alpha: .2);
+	}
+}
+
+.addfiles {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 20px;
+	&:hover {
+		.addfiles__plus {
+			border: 1px solid rgba($color: $orange, $alpha: .5);
+			&::after {
+				color: rgba($color: $orange, $alpha: .5);
+			}
+		}
+	}
+	// .addfiles__plus
+	&__plus {
+		flex: 0 0 20px;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		display: block;
+		border: 1px solid $orange;
+		border-radius: 50%;
+		&::after {
+			content: "+";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: $orange;
+		}
+	}
+
+	// .addfiles__text
+	&__text {
+		color: $text;
+		font-size: 20px;
+	}
+
+	// .addfiles__input
+	&__input {
+		display: none;
+	}
+}
+

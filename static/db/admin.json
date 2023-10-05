@@ -1,0 +1,55 @@
+[
+	{
+		"uid":"1",
+		"url": "http://127.0.0.1:5500/admin.gallery.html",
+		"isAdmin": true,
+		"name": "name 1",
+		"img_url": [
+			{"uid":"1", "url": "./static/img/1/9.png"},
+			{"uid":"2", "url": "./static/img/1/2.png"}			
+		]
+	},
+	{
+		"uid":"2",
+		"url": "http://127.0.0.1:5500/admin.gallery.html",
+		"isAdmin": true,
+		"name": "name 2",
+		"img_url": [
+			{"uid":"1", "url": "./static/img/1/13.png"},
+			{"uid":"2", "url": "./static/img/1/2.png"}
+		]
+	},
+	{
+		"uid":"3",
+		"url": "http://127.0.0.1:5500/admin.gallery.html",
+		"isAdmin": true,
+		"name": "name 3",
+		"img_url": [
+			{"uid":"1", "url": "./static/img/1/1.png"},
+			{"uid":"2", "url": "./static/img/1/2.png"},
+			{"uid":"3", "url": "./static/img/1/3.png"},
+			{"uid":"4", "url": "./static/img/1/4.png"},
+			{"uid":"5", "url": "./static/img/1/5.png"},
+			{"uid":"6", "url": "./static/img/1/6.png"},
+			{"uid":"7", "url": "./static/img/1/7.png"},
+			{"uid":"8", "url": "./static/img/1/8.png"},
+			{"uid":"9", "url": "./static/img/1/9.png"},
+			{"uid":"10", "url": "./static/img/1/10.png"},
+			{"uid":"11", "url": "./static/img/1/11.png"},
+			{"uid":"12", "url": "./static/img/1/12.png"},
+			{"uid":"13", "url": "./static/img/1/13.png"},
+			{"uid":"14", "url": "./static/img/1/14.png"},
+			{"uid":"15", "url": "./static/img/1/1.png"},
+			{"uid":"16", "url": "./static/img/1/2.png"}
+		]
+	},
+	{
+		"uid":"4",
+		"url": "http://127.0.0.1:5500/admin.gallery.html",
+		"isAdmin": true,
+		"name": "name 4",
+		"img_url": [
+			{"uid":"1", "url":  "./static/img/1/12.png"}
+		]
+	}
+]

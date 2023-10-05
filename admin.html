@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./static/css/style.css">
+	<title>Admin</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="gallery">
+			<div class="container">
+				<h1 class="gallery__title">Gallery</h1>
+				<nav class="gallery__nav navgallery">
+					<div class="navgallery__btns">
+						<a href="./user.html" class="navgallery__btn btn">
+							<span>
+								galleries
+							</span>
+						</a>
+					</div>
+				</nav>
+				<div id="admin" class="gallery__body">
+
+				</div>
+			</div>
+			<div id="add" class="poppup">
+				<form class="poppup__body">
+					<div class="poppup__title">
+						<span>
+							Add a new gallery
+						</span>
+					</div>
+					<div class="poppup__row">
+						<label class="poppup__label">
+							<span>New gallery name:</span>
+							<input class="poppup__input input" name="name" type="text" required>
+						</label>
+					</div>
+					<div class="poppup__row">
+						<label class="poppup__addfiles addfiles btn">
+							<span class="addfiles__plus"></span>
+							<span class="addfiles__text">click to uploads files</span>
+							<input class="addfiles__input" addfiles type="file" multiple required>
+						</label>
+					</div>
+					<div class="poppup__row">
+						<span id="poppup__error" class="poppup__error"></span>
+					</div>
+					<div class="poppup__row poppup__btns">
+						<button type="submit" class="poppup__additem btn">
+							<span>
+								create
+							</span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="./static/js/server.js"></script>
+<script src="./static/js/gallery.js"></script>
+<script src="./static/js/poppup.js"></script>
+<script src="./static/js/admin.js"></script>
+
+</html>
