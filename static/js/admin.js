@@ -123,14 +123,15 @@ document.addEventListener("click", (e) => {
 			return
 		}
 
-		item = {
-			name: name,
-			files: addfilesInput.files
+		let formdata = new FormData()
+		formdata.append('name', name)
+		for (file of addfilesInput.files) {
+			formdata.append('file', file, file.name)
 		}
 
 		// ! send to server
 		// url = "http://localhost:8080/admin"
-		toServer(url, "POST", item)
+		fileToServer(url, formdata)
 			.then((response) => {
 				console.log(response);
 				classGalleries.add(response)
@@ -138,7 +139,6 @@ document.addEventListener("click", (e) => {
 			.catch((error) => {
 				console.log(error);
 			})
-		console.log(item);
 	}
 
 })
